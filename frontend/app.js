@@ -23,7 +23,7 @@ const tBody = document.getElementById("tBody");
 const renderData = (res) => {
   let trEl = (mat, name, ges, mth, eng, chm, phy, gpa) => {
     return `<tr>
-        <td>${mat}</td>
+        <td class="matNO">${mat}</td>
         <td>${name}</td>
         <td>${ges}</td>
         <td>${mth}</td>
@@ -51,7 +51,6 @@ const renderData = (res) => {
         el.phy.$numberDecimal,
         50
       );
-      console.log(el);
     };
     renderRow();
   });

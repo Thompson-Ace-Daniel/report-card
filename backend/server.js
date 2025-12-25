@@ -5,6 +5,7 @@ import cors from "cors";
 // import { createDoc } from './controllers/createDoc.js'
 import resultsRouter from "./routes/results.js";
 import insertRouteRouter from './routes/insertRoute.js';
+import deleteRouteRouter from './routes/deleteRoute.js';
 
 dotenv.config({ quiet: true });
 const app = express();
@@ -18,7 +19,8 @@ connectDB(DATABASE_URL);
 // createDoc();
 
 app.use('/api', resultsRouter);
-app.use('/api', insertRouteRouter)
+app.use('/api', insertRouteRouter);
+app.use('/api', deleteRouteRouter);
 
 app.get('/', (req, res) => {
     res.send("Server is running! - check /api/results for data.")
